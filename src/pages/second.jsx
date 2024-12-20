@@ -1,4 +1,3 @@
-import {NavLink} from "react-router-dom";
 import {DotLottieReact} from '@lottiefiles/dotlottie-react'
 const SecondPage=()=> {
   return(<div   className='secondPage'>
