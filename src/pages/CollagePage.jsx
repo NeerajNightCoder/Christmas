@@ -1,5 +1,6 @@
-import React from 'react';
-import './CollagePage.css'; // Import the CSS for styling
+import React, {useEffect, useRef, useState} from 'react';
+import './CollagePage.css';
+import {Snowfall} from "react-snowfall";
 
 const imageUrls = [
     '/img1.jpeg',
@@ -8,28 +9,41 @@ const imageUrls = [
     '/img4.jpeg',
 ];
 
-// Function to generate a random rotation between 0 and 30 degrees
-const getRandomRotation = () => {
-    return `${Math.floor(Math.random() * 31)}deg`; // Random rotation between 0 and 30 degrees
-};
+
 
 const rotations=['10 deg','-20deg','30deg','-20deg']
 
 const CollagePage = () => {
+
+    const [isPlaying, setIsPlaying] = useState(false);
+    const audioRef = useRef(null);
+
+    const startMusic = () => {
+        const audio = audioRef.current;
+        audio.play(); // Start the audio
+        audio.loop = false; // Make it loop
+    };
+    useEffect(() => {
+        startMusic()
+    }, []);
     return (
-        <div  style={{display:'flex',flexDirection:'column',justifyContent:'space-around',height:'90vh'}}>
-        <div className="collage-container">
-            {imageUrls.map((url, index) => (
-                <div
-                    key={index}
-                    className="image-container"
-                    style={{ transform: `rotate(${rotations[index]})` }} // Apply random rotation
-                >
-                    <img src={url} alt={`collage-image-${index}`} className="collage-image" />
-                </div>
-            ))}
-        </div>
-            <h1 style={{textAlign:'center'}}>Achieve your dreams !!!</h1>
+        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', height: '90vh'}}>
+            <Snowfall/>
+            <div className="collage-container">
+                {imageUrls.map((url, index) => (
+                    <div
+                        key={index}
+                        className="image-container"
+                        style={{transform: `rotate(${rotations[index]})`}} // Apply random rotation
+                    >
+                        <img src={url} alt={`collage-image-${index}`} className="collage-image"/>
+                    </div>
+                ))}
+            </div>
+            <h1 style={{textAlign: 'center'}}>Bs hogya bro aajka, isse jyada effort nahi daal skte the
+
+                All the very best for the day!</h1>
+            <audio ref={audioRef} src="/myvoice.mp3" preload="auto"/>
         </div>
 
     );

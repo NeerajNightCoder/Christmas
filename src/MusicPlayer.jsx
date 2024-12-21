@@ -8,6 +8,7 @@ const MusicPlayer = () => {
 
     const startMusic = () => {
         const audio = audioRef.current;
+        audio.volume=0.5
         audio.play(); // Start the audio
         audio.loop = true; // Make it loop
         setIsPlaying(true); // Update state to reflect that music is playing
@@ -16,7 +17,7 @@ const MusicPlayer = () => {
 
     return (
         <div>
-            {!isPlaying&&<h1 className="message">Hey, we planned a surprise for you!</h1>}
+            {!isPlaying&&<h1 className="message">"Oye sun na, ik vadda surprise hai tere layi!</h1>}
             {/* Button to reveal the secret and start music */}
             {!isPlaying && (
                 <button onClick={startMusic} className='surprise-btn'>Reveal Secret</button>

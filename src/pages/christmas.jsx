@@ -68,6 +68,12 @@ return (
                             loop
                             autoplay
             />
+        </div><div style={{ display: "inline-block", marginLeft: "-300px"}}>
+            <DotLottieReact style={{width: '500px'}}
+                            src="https://lottie.host/ab0d5198-6138-422b-8e15-1ee47175ac96/30pGKi0BeA.lottie"
+                            loop
+                            autoplay
+            />
         </div>
             {/*<h1><NavLink href="christmas.jsx">Do you know how special is today?</NavLink></h1>*/}
 
