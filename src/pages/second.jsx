@@ -1,6 +1,16 @@
 import {DotLottieReact} from '@lottiefiles/dotlottie-react'
+import {useHistory} from "react-router-dom";
+import collagePage from "./CollagePage";
 const SecondPage=()=> {
+
+    const history=useHistory()
+    const goToCollagePage=()=>{
+        history.push('/collage')
+    }
+
+    setTimeout(goToCollagePage,5000)
   return(<div   className='secondPage'>
+          <img src="/image.jpg" alt="" style={{width:"50vw",border:'1px solid black'}}/>
           <h1 className="zoom-fade"> Happy Birthday </h1>
           <div
               style={{position: 'absolute', left: 0, top: 100, width: '50vw'}}>
