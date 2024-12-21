@@ -10,7 +10,7 @@ const SecondPage=()=> {
 
     setTimeout(goToCollagePage,5000)
   return(<div   className='secondPage'>
-          <img src="/image.jpg" alt="" style={{width:"50vw",border:'1px solid black'}}/>
+          {/*<img src="/image.jpg" alt="" style={{width:"50vw",border:'1px solid black'}}/>*/}
           <h1 className="zoom-fade"> Happy Birthday </h1>
           <div
               style={{position: 'absolute', left: 0, top: 100, width: '50vw'}}>
